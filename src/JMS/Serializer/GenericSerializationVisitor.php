@@ -93,7 +93,7 @@ abstract class GenericSerializationVisitor extends AbstractVisitor
     {
         if (null === $this->root) {
             $this->root = array();
-            $rs = &$this->root;
+            $rs = $this->root;
         } else {
             $rs = array();
         }
@@ -107,7 +107,7 @@ abstract class GenericSerializationVisitor extends AbstractVisitor
 
             $rs[$k] = $v;
         }
-
+        $this->root = $rs;
         return $rs;
     }
 
